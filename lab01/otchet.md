@@ -31,12 +31,12 @@ var result = builder.Build();
 Ключевые связи:
 
 Тип связи	Откуда → Куда
-Реализация	ExamResultBuilder → IExamResultBuilder
-Зависимость	IExamResultBuilder → LabWork, ExamResult
-Зависимость	MainForm → ExamResultBuilder
-Композиция	Student → ExamSession (1 : *)
-Агрегация	ExamSession → Question (* : *)
-Ассоциация	MainForm → Student, ExamResult, Question
+1. Реализация	ExamResultBuilder → IExamResultBuilder
+2. Зависимость	IExamResultBuilder → LabWork, ExamResult
+3. Зависимость	MainForm → ExamResultBuilder
+4. Композиция	Student → ExamSession (1 : *)
+5. Агрегация	ExamSession → Question (* : *)
+6. Ассоциация	MainForm → Student, ExamResult, Question
 ## 4. Диаграмма последовательностей
 ![alt text](image.png)
 
@@ -88,3 +88,4 @@ private void BtnCalculate_Click(object sender, EventArgs e)
 Повысить читаемость — цепочка ProcessTopic → Build наглядно отражает пошаговое построение результата
 
 Функциональность приложения идентична в обоих вариантах. Разница — во внутренней организации кода.
+
