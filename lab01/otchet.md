@@ -24,7 +24,7 @@ builder.ProcessTopic(1, labsTopic1);
 builder.ProcessTopic(2, labsTopic2);
 builder.ProcessTopic(3, labsTopic3);
 var result = builder.Build();
-
+```
 ## 3. Диаграмма классов
 ![alt text](image-1.png)
 
@@ -53,7 +53,7 @@ MainForm создаёт ExamResultBuilder
 ## 5. Сравнение: без паттерна и с паттерном
 Без паттерна — логика в обработчике кнопки:
 
-
+```csharp
 private void BtnCalculate_Click(object sender, EventArgs e)
 {
     int overdueCount = 0;
@@ -65,9 +65,10 @@ private void BtnCalculate_Click(object sender, EventArgs e)
     }
     _lastExamResult = new ExamResult(overdueCount > 0, topicsForExam, overdueCount);
 }
+```
 С паттерном — логика в отдельном классе:
 
-csharp
+```csharp
 
 private void BtnCalculate_Click(object sender, EventArgs e)
 {
@@ -77,6 +78,7 @@ private void BtnCalculate_Click(object sender, EventArgs e)
     builder.ProcessTopic(3, _labWorks.Where(l => l.TopicNumber == 3).ToList());
     _lastExamResult = builder.Build();
 }
+```
 ## 6. Вывод
 Применение паттерна Builder позволило:
 
@@ -84,4 +86,5 @@ private void BtnCalculate_Click(object sender, EventArgs e)
 Обеспечить расширяемость — через интерфейс IExamResultBuilder можно подменить реализацию с другими правилами допуска
 Упростить тестирование — строитель тестируется отдельно от формы
 Повысить читаемость — цепочка ProcessTopic → Build наглядно отражает пошаговое построение результата
+
 Функциональность приложения идентична в обоих вариантах. Разница — во внутренней организации кода.
