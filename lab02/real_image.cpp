@@ -4,7 +4,7 @@
 #include <QThread>
 
 RealImage::RealImage(const QString& filepath) : filepath_(filepath) {
-    loadFromDisk();  // Тяжёлая операция СРАЗУ в конструкторе
+    loadFromDisk();
 }
 
 void RealImage::loadFromDisk() {
