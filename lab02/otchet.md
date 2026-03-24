@@ -33,7 +33,8 @@ QPixmap ImageProxy::getPixmap(int width, int height) {
 
 ## 3. Диаграмма классов
 
-<img width="955" height="768" alt="classdiag" src="https://github.com/user-attachments/assets/edb8e858-735b-429c-ac69-d0d636aace31" />
+<img width="876" height="706" alt="image" src="https://github.com/user-attachments/assets/50166bc2-07c7-43b3-b85c-3cada0176f4d" />
+
 
 
 Ключевые связи:
@@ -42,7 +43,7 @@ QPixmap ImageProxy::getPixmap(int width, int height) {
 |-----------|---------------|
 | Реализация | RealImage → Image |
 | Реализация | ImageProxy → Image |
-| Композиция | ImageProxy → RealImage |
+| Ассоциация | ImageProxy → RealImage |
 | Композиция | GalleryWindow → Image |
 | Зависимость | GalleryWindow → RealImage (создаёт в loadDirect) |
 | Зависимость | GalleryWindow → ImageProxy (создаёт в loadWithProxy) |
